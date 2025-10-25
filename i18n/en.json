@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sébastien Santoro aka Dereckson"
+		]
+	},
+	"allowlisthtmltags-desc": "Safely allow specific HTML 5 tags to be used in wikitext."
+}

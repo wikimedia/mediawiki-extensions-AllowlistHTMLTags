@@ -1,0 +1,102 @@
+!! options
+version=2
+!! end
+
+!! test
+Basic details tag
+!! wikitext
+<details>
+<summary>Summary text</summary>
+Content text
+</details>
+!! html
+<p class="mw-empty-elt"></p><details>
+<summary>Summary text</summary>
+Content text
+</details>
+<p class="mw-empty-elt"></p>
+!! end
+
+!! test
+Details without summary
+!! wikitext
+<details>
+Lorem ipsum dolor.
+</details>
+!! html
+<p class="mw-empty-elt"></p><details>
+Lorem ipsum dolor.
+</details>
+<p class="mw-empty-elt"></p>
+!! end
+
+!! test
+Details with open attribute
+!! wikitext
+<details open>
+<summary>Summary</summary>
+Content
+</details>
+!! html
+<p class="mw-empty-elt"></p><details open="">
+<summary>Summary</summary>
+Content
+</details>
+<p class="mw-empty-elt"></p>
+!! end
+
+!! test
+Details with class attribute
+!! wikitext
+<details class="custom-class">
+<summary>Summary</summary>
+Content
+</details>
+!! html
+<p class="mw-empty-elt"></p><details class="custom-class">
+<summary>Summary</summary>
+Content
+</details>
+<p class="mw-empty-elt"></p>
+!! end
+
+!! test
+Details with XSS attack attempt
+!! wikitext
+<details id="test" onclick="alert('xss')">
+<summary>Summary</summary>
+Content
+</details>
+!! html
+<p class="mw-empty-elt"></p><details id="test">
+<summary>Summary</summary>
+Content
+</details>
+<p class="mw-empty-elt"></p>
+!! end
+
+!! test
+Details with bold wikitext
+!! wikitext
+<details>
+<summary>'''Bold summary'''</summary>
+'''Bold content'''
+</details>
+!! html
+<p class="mw-empty-elt"></p><details>
+<summary><b>Bold summary</b></summary>
+<b>Bold content</b>
+</details>
+<p class="mw-empty-elt"></p>
+!! end
+
+!! test
+Multiple details tags
+!! wikitext
+<details><summary>First</summary>Content 1</details>
+<details><summary>Second</summary>Content 2</details>
+!! html
+<p class="mw-empty-elt"></p><details><summary>First</summary>Content 1</details>
+<details><summary>Second</summary>Content 2</details>
+<p class="mw-empty-elt"></p>
+!! end
